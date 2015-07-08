@@ -84,7 +84,7 @@ greet("Adam");
 greet("Steph");
 ```
 
-Cool! So much better and more dynamic than having JavaScript return "Good morning person!". What if we also wanted it to greet us based on the time of day, for instance "Good afternoon Harold!" or "Good night Jasmine!"? Well, then we'd have to pass our function a second parameter, the time of day:
+Cool! So much better and more dynamic than having JavaScript return "Good morning you!". What if we also wanted it to greet us based on the time of day, for instance "Good afternoon Harold!" or "Good night Jasmine!"? Well, then we'd have to pass our function a second parameter, the time of day:
 
 ```javascript
 function greet(name, timeOfDay) {
