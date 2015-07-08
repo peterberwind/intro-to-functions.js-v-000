@@ -273,6 +273,7 @@ end
 
 ## Resources
 
+* [Eloquent JavaScript - Functions](http://eloquentjavascript.net/03_functions.html)
 * [MDN - Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions)
 * [MDN - Default Parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
 
