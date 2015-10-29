@@ -25,7 +25,7 @@ convert_to_meters(16)
 # => "4.88 meters"
 ```
 
-Notice that the return value of a Ruby method is the return value for the last line of code that the method evalauted.
+Notice that the return value of a Ruby method is the return value for the last line of code that the method evaluated.
 
 JavaScript also had a way to wrap lines of code into reusable chunks. Instead of calling them methods as we do in Ruby, these wrapped lines of code are called functions. 
 
@@ -61,7 +61,7 @@ To call a function, you type the functions name followed by a beginning parenthe
 greet();
 ```
 
-If you try to call on a function using just its name, as you can in Ruby, the entire function will get returned back to you instead of the fuction's return value so be careful!
+If you try to call on a function using just its name, as you can in Ruby, the entire function will get returned back to you instead of the function's return value so be careful!
 
 ```javascript
 // Returns [Function: greet]
@@ -102,7 +102,7 @@ Like in Ruby, you can add as many parameters to your JavaScript functions as you
 
 ## Default parameters
 
-Ruby has an idea of allowing you to pass optional arguments by defaulting argument values. To create a default argument, you add an equal sign where you define the varible name of your argument and set it equal to the value you want it to default to:
+Ruby has an idea of allowing you to pass optional arguments by defaulting argument values. To create a default argument, you add an equal sign where you define the variable name of your argument and set it equal to the value you want it to default to:
 
 ```ruby
 def greet(name="you")
@@ -180,7 +180,7 @@ end
 
 Now let's make it a JavaScript function!
 
-The first step is to change the `def` keyword into a `function` keyword. The next step is to change the method's name, which is in snake case, into lower camelCase. The thrid step will be to change the `end` keyword into an ending curly brace and add a beginning curly brace after the argument, like so:
+The first step is to change the `def` keyword into a `function` keyword. The next step is to change the method's name, which is in snake case, into lower camelCase. The third step will be to change the `end` keyword into an ending curly brace and add a beginning curly brace after the argument, like so:
 
 ```javascript
 function convertToMeters(feet) {
@@ -229,7 +229,7 @@ function convertToMeters(feet) {
 }
 ```
 
-Finally, let's concatinate our rounded meter value with the string " meters":
+Finally, let's concatenate our rounded meter value with the string " meters":
 
 ```javascript
 function convertToMeters(feet) {
@@ -266,8 +266,8 @@ convertToMeters(16)
 And it did! Now try this out for yourself. Turn the Ruby method below into a JavaScript function. If you get stuck, take a look at the solution at the end of this document.
 
 ```ruby
-def convert_to_fahrenheit(celsious=0)
-  celsious *  9/5 + 32
+def convert_to_fahrenheit(celsius=0)
+  celsius *  9/5 + 32
 end
 ```
 
@@ -279,21 +279,21 @@ end
 
 ## Solution
 
-Here's the Ruby method that converts Celsious to Fahrenheit:
+Here's the Ruby method that converts Celsius to Fahrenheit:
 
 ```ruby
-def convert_to_fahrenheit(celsious=0)
-  celsious *  9/5 + 32
+def convert_to_fahrenheit(celsius=0)
+  celsius *  9/5 + 32
 end
 ```
 
-Here's the JavaScript method that converts Celsious to Fahrenheit:
+Here's the JavaScript method that converts Celsius to Fahrenheit:
 
 ```javascript
-function convertToFahrenheit(celsious) {
-  if (typeof(celsious) === "undefined") {
-    var celsious = 0;
+function convertToFahrenheit(celsius) {
+  if (typeof(celsius) === "undefined") {
+    var celsius = 0;
   }
-  return celsious *  9/5 + 32;
+  return celsius *  9/5 + 32;
 }
 ```
