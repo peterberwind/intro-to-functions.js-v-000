@@ -297,3 +297,5 @@ function convertToFahrenheit(celsius) {
   return celsius *  9/5 + 32;
 }
 ```
+
+<a href='https://learn.co/lessons/intro-to-functions.js' data-visibility='hidden'>View this lesson on Learn.co</a>
