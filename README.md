@@ -103,7 +103,7 @@ We can still call this function in the same way we would a function written with
 greet("Grover", "afternoon");
 ```
 
-For all intents and purposes, a function declaration and a function expression work in the exact same way. It's good to be familiar with both ways of writing a function for when you start working with other developers, or using Google resources for help
+For all intents and purposes, a function declaration and a function expression work in the exact same way. It's good to be familiar with both ways of writing a function for when you start working with other developers, or using Google resources for help.
 
 ## Default parameters
 
