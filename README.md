@@ -1,35 +1,17 @@
 # JavaScript Functions
 
-## Overview
+You're already very familiar with the idea of wrapping our code as methods in Ruby in order to make them reusable. In JavaScript, we call them functions and the syntax is slightly different, but the general idea is the same.
 
-* About
-* Syntax
-* Parameters
-* Default parameters
-* Example
-* Resources
-* Solution
+## Objectives
 
-## About
++ Write a function in JavaScript without parameters
++ Return a value from a function in JavaScript
++ Write a function with parameters
++ Write a function with default parameters
 
-In Ruby, it's a common practice to wrap code that you reuse in a method using the `def` keyword. For example, let's take a look at this conversion method that takes feet and returns meters:
+## Function Without Parameters
 
-```ruby
-def convert_to_meters(feet)
-  meters = feet / 3.2808
-  rounded = meters.round(2) 
-  "#{rounded} meters"
-end
 
-convert_to_meters(16)
-# => "4.88 meters"
-```
-
-Notice that the return value of a Ruby method is the return value for the last line of code that the method evaluated.
-
-JavaScript also had a way to wrap lines of code into reusable chunks. Instead of calling them methods as we do in Ruby, these wrapped lines of code are called functions. 
-
-## Syntax
 
 Here's the basic syntax for a function that doesn't take any parameters (you know them as arguments):
 
@@ -40,11 +22,11 @@ function nameOfFunction() {
 }
 ```
 
-Notice that curly braces begin and end the function and that the `def` keyword has been replaced with the `function` keyword. 
+Notice the `def` keyword has been replaced with the `function` keyword. The name of the function is always followed by `()` and then curly braces begin and end the function and that
 
 Further, the name of the function is not snake_cased, but rather lowerCamelCased. Snakecase is not used in JavaScript so leave your underscores at home people!
 
-One last important thing to note is that JavaScript functions will always return `undefined` unless you use the `return` keyword. In Ruby, writing `return` was optional because Ruby always returns the value of the last line of code evaluated. However, JavaScript has no implicit-return-value concept, so you must write `return` before the value you want to return.
+One last important thing to note is that JavaScript functions will always return `undefined` unless you use the `return` keyword. In Ruby, writing `return` is optional because Ruby always returns the value of the last line of code evaluated. However, JavaScript has no implicit-return-value concept, so you must write `return` before the value you want to return.
 
 Here's a simple example of a function that will will greet us good morning:
 
@@ -110,7 +92,9 @@ def greet(name="you")
 end
 ```
 
-This way, you can call on the method with the argument and it will set `name` to be the string you passed:
+This way, you can call on the method with the argument and it will set `name` to be the string you passed.
+
+Ruby:
 
 ```ruby
 greet("Jasmine")
@@ -124,7 +108,7 @@ greet
 # => "Good morning you!"
 ```
 
-You can make functions that behave as though they have default arguments using JavaScript. Here again is the simple greeting function:
+In JavaScript, you can make functions behave has though they have default arguments. Here again is the simple greeting function:
 
 ```javascript
 function greet(name) {
@@ -210,7 +194,7 @@ function convertToMeters(feet) {
 }
 ```
 
-To round a float in JavaScript, you wrap the number in parentheses and then call `.toFixed()` on the number. You then pass the function `.toFixed()` the number 2, meaning you would like two digits after the decimal.
+To round a float in JavaScript, you wrap the number in parentheses and then call `.toFixed()` on the number. You then pass the a parameter, the number 2, meaning you would like two digits after the decimal:
 
 ```javascript
 var num = 3.14159;
@@ -283,7 +267,7 @@ Here's the Ruby method that converts Celsius to Fahrenheit:
 
 ```ruby
 def convert_to_fahrenheit(celsius=0)
-  celsius *  9/5 + 32
+  (celsius *  9/5) + 32
 end
 ```
 
@@ -294,7 +278,7 @@ function convertToFahrenheit(celsius) {
   if (typeof(celsius) === "undefined") {
     var celsius = 0;
   }
-  return celsius *  9/5 + 32;
+  return (celsius *  9/5) + 32;
 }
 ```
 
