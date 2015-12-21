@@ -50,6 +50,8 @@ If you try to call on a function using just its name, as you can in Ruby, the en
 greet;
 ```
 
+It's important to note that JavaScript does not run the code during a function definition. All it does is read that there is a function called `greet` and store it in memory. It doesn't actually create any of the variables inside the function (if there are any) until the method is called.
+
 ## Parameters
 
 The above is function is fine, but it could be better. For instance, what if you wanted your program to say the person's name instead of just "you" (ex. "Good morning Adam!" or "Good morning Steph!"). Well, just like in Ruby, you'd want to pass this function an argument. In JavaScript, arguments are called parameters.
@@ -81,6 +83,27 @@ greet("Jasmine", "night");
 ```
 
 Like in Ruby, you can add as many parameters to your JavaScript functions as you like. Or you can pass them none. Just depends on what task you're trying to accomplish.
+
+## Function Expression
+
+There are two different ways to write functions in JavaScript. You can write them as a function **declaration** which is how we've been writing them, or as a function *expression**. Both ways effectively work the same way, they just store the functions in memory slightly differently.
+
+A function expression looks something like this:
+
+```js
+var greet = function(name, timeOfDay){ 
+  return "Good "+ timeOfDay + " "+ name + "!";
+}
+```
+
+We can still call this function in the same way we would a function written with a function declaration:
+
+```js
+// Returns "Good afternoon Grover!"
+greet("Grover", "afternoon");
+```
+
+For all intents and purposes, a function declaration and a function expression work in the exact same way. It's good to be familiar with both ways of writing a function for when you start working with other developers, or using Google resources for help
 
 ## Default parameters
 
