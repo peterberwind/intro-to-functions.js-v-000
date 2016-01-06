@@ -3,15 +3,27 @@
 You're already very familiar with the idea of wrapping our code as methods in Ruby in order to make them reusable. In JavaScript, we call them functions and the syntax is slightly different, but the general idea is the same.
 
 ## Objectives
-
++ Explain how function return values work
 + Write a function in JavaScript without parameters
 + Return a value from a function in JavaScript
 + Write a function with parameters
 + Write a function with default parameters
 
+## Function Return Values
+
+Unless you use the `return` keyword or call a function that explicitly returns a value, the implicit return value in JavaScript is  `undefined`.
+
+> Undefined represents the absence of a primitive value
+
+Other special return values in JavaScript are `null`
+
+> Null represents the absence of an object
+
+and `NaN`
+
+> NaN represents an error from the improper use of a math operator.
+
 ## Function Without Parameters
-
-
 
 Here's the basic syntax for a function that doesn't take any parameters (you know them as arguments):
 
