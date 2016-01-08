@@ -34,7 +34,7 @@ function nameOfFunction() {
 }
 ```
 
-Notice the `def` keyword has been replaced with the `function` keyword. The name of the function is always followed by `()` and then curly braces begin and end the function and that
+Notice the `def` keyword has been replaced with the `function` keyword. The name of the function is always followed by `()` and then curly braces that begin and end the function.
 
 Further, the name of the function is not snake_cased, but rather lowerCamelCased. Snakecase is not used in JavaScript so leave your underscores at home people!
 
