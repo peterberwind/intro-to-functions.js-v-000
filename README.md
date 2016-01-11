@@ -9,20 +9,6 @@ You're already very familiar with the idea of wrapping our code as methods in Ru
 + Write a function with parameters
 + Write a function with default parameters
 
-## Function Return Values
-
-Unless you use the `return` keyword or call a function that explicitly returns a value, the implicit return value in JavaScript is  `undefined`.
-
-> Undefined represents the absence of a primitive value
-
-Other special return values in JavaScript are `null`
-
-> Null represents the absence of an object
-
-and `NaN`
-
-> NaN represents an error from the improper use of a math operator.
-
 ## Function Without Parameters
 
 Here's the basic syntax for a function that doesn't take any parameters (you know them as arguments):
@@ -63,6 +49,20 @@ greet;
 ```
 
 It's important to note that JavaScript does not run the code during a function definition. All it does is read that there is a function called `greet` and store it in memory. It doesn't actually create any of the variables inside the function (if there are any) until the method is called.
+
+## Function Return Values
+
+Unless you use the `return` keyword or call a function that explicitly returns a value, the implicit return value in JavaScript is  `undefined`.
+
+> Undefined represents the absence of a primitive value
+
+Other special return values in JavaScript are `null`
+
+> Null represents the absence of an object
+
+and `NaN`
+
+> NaN represents an error from the improper use of a math operator.
 
 ## Parameters
 
@@ -183,7 +183,18 @@ greet("Blake");
 greet();
 ```
 
-And that's all there is for optional parameters folks!
+Unlike Ruby, JavaScript doesn't force you to call a function with a set number of parameters. If a JavaScript function it defined to accept two parameters, and you call the function with only one parameter, the function will still run, but place `undefined` in the spot of the missing paramater:
+
+```js
+function greet(name, timeOfDay) {
+  return "Good "+ timeOfDay + " "+ name + "!";
+}
+
+greet("joe");
+// returns "Good undefined joe!"
+```
+
+Be careful when calling functions with parameters. This could inadvertently mess up your return values.
 
 ## Example 
 
