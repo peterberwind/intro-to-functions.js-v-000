@@ -1,35 +1,15 @@
 # JavaScript Functions
 
-## Overview
+You're already very familiar with the idea of wrapping our code as methods in Ruby in order to make them reusable. In JavaScript, we call them functions and the syntax is slightly different, but the general idea is the same.
 
-* About
-* Syntax
-* Parameters
-* Default parameters
-* Example
-* Resources
-* Solution
+## Objectives
++ Explain how function return values work
++ Write a function in JavaScript without parameters
++ Return a value from a function in JavaScript
++ Write a function with parameters
++ Write a function with default parameters
 
-## About
-
-In Ruby, it's a common practice to wrap code that you reuse in a method using the `def` keyword. For example, let's take a look at this conversion method that takes feet and returns meters:
-
-```ruby
-def convert_to_meters(feet)
-  meters = feet / 3.2808
-  rounded = meters.round(2) 
-  "#{rounded} meters"
-end
-
-convert_to_meters(16)
-# => "4.88 meters"
-```
-
-Notice that the return value of a Ruby method is the return value for the last line of code that the method evaluated.
-
-JavaScript also had a way to wrap lines of code into reusable chunks. Instead of calling them methods as we do in Ruby, these wrapped lines of code are called functions. 
-
-## Syntax
+## Function Without Parameters
 
 Here's the basic syntax for a function that doesn't take any parameters (you know them as arguments):
 
@@ -40,11 +20,11 @@ function nameOfFunction() {
 }
 ```
 
-Notice that curly braces begin and end the function and that the `def` keyword has been replaced with the `function` keyword. 
+Notice the `def` keyword has been replaced with the `function` keyword. The name of the function is always followed by `()` and then curly braces that begin and end the function.
 
 Further, the name of the function is not snake_cased, but rather lowerCamelCased. Snakecase is not used in JavaScript so leave your underscores at home people!
 
-One last important thing to note is that JavaScript functions will always return `undefined` unless you use the `return` keyword. In Ruby, writing `return` was optional because Ruby always returns the value of the last line of code evaluated. However, JavaScript has no implicit-return-value concept, so you must write `return` before the value you want to return.
+One last important thing to note is that JavaScript functions will always return `undefined` unless you use the `return` keyword. In Ruby, writing `return` is optional because Ruby always returns the value of the last line of code evaluated. However, JavaScript has no implicit-return-value concept, so you must write `return` before the value you want to return.
 
 Here's a simple example of a function that will will greet us good morning:
 
@@ -67,6 +47,22 @@ If you try to call on a function using just its name, as you can in Ruby, the en
 // Returns [Function: greet]
 greet;
 ```
+
+It's important to note that JavaScript does not run the code during a function definition. All it does is read that there is a function called `greet` and store it in memory. It doesn't actually create any of the variables inside the function (if there are any) until the method is called.
+
+## Function Return Values
+
+Unless you use the `return` keyword or call a function that explicitly returns a value, the implicit return value in JavaScript is  `undefined`.
+
+> Undefined represents the absence of a primitive value
+
+Other special return values in JavaScript are `null`
+
+> Null represents the absence of an object
+
+and `NaN`
+
+> NaN represents an error from the improper use of a math operator.
 
 ## Parameters
 
@@ -100,6 +96,27 @@ greet("Jasmine", "night");
 
 Like in Ruby, you can add as many parameters to your JavaScript functions as you like. Or you can pass them none. Just depends on what task you're trying to accomplish.
 
+## Function Expression
+
+There are two different ways to write functions in JavaScript. You can write them as a function **declaration** which is how we've been writing them, or as a function *expression**. Both ways effectively work the same way, they just store the functions in memory slightly differently.
+
+A function expression looks something like this:
+
+```js
+var greet = function(name, timeOfDay){ 
+  return "Good "+ timeOfDay + " "+ name + "!";
+}
+```
+
+We can still call this function in the same way we would a function written with a function declaration:
+
+```js
+// Returns "Good afternoon Grover!"
+greet("Grover", "afternoon");
+```
+
+For all intents and purposes, a function declaration and a function expression work in the exact same way. It's good to be familiar with both ways of writing a function for when you start working with other developers, or using Google resources for help.
+
 ## Default parameters
 
 Ruby has an idea of allowing you to pass optional arguments by defaulting argument values. To create a default argument, you add an equal sign where you define the variable name of your argument and set it equal to the value you want it to default to:
@@ -110,7 +127,9 @@ def greet(name="you")
 end
 ```
 
-This way, you can call on the method with the argument and it will set `name` to be the string you passed:
+This way, you can call on the method with the argument and it will set `name` to be the string you passed.
+
+Ruby:
 
 ```ruby
 greet("Jasmine")
@@ -124,7 +143,7 @@ greet
 # => "Good morning you!"
 ```
 
-You can make functions that behave as though they have default arguments using JavaScript. Here again is the simple greeting function:
+In JavaScript, you can make functions behave has though they have default arguments. Here again is the simple greeting function:
 
 ```javascript
 function greet(name) {
@@ -164,7 +183,18 @@ greet("Blake");
 greet();
 ```
 
-And that's all there is for optional parameters folks!
+Unlike Ruby, JavaScript doesn't force you to call a function with a set number of parameters. If a JavaScript function it defined to accept two parameters, and you call the function with only one parameter, the function will still run, but place `undefined` in the spot of the missing paramater:
+
+```js
+function greet(name, timeOfDay) {
+  return "Good "+ timeOfDay + " "+ name + "!";
+}
+
+greet("joe");
+// returns "Good undefined joe!"
+```
+
+Be careful when calling functions with parameters. This could inadvertently mess up your return values.
 
 ## Example 
 
@@ -210,7 +240,7 @@ function convertToMeters(feet) {
 }
 ```
 
-To round a float in JavaScript, you wrap the number in parentheses and then call `.toFixed()` on the number. You then pass the function `.toFixed()` the number 2, meaning you would like two digits after the decimal.
+To round a float in JavaScript, you wrap the number in parentheses and then call `.toFixed()` on the number. You then pass the a parameter, the number 2, meaning you would like two digits after the decimal:
 
 ```javascript
 var num = 3.14159;
@@ -283,7 +313,7 @@ Here's the Ruby method that converts Celsius to Fahrenheit:
 
 ```ruby
 def convert_to_fahrenheit(celsius=0)
-  celsius *  9/5 + 32
+  (celsius *  9/5) + 32
 end
 ```
 
@@ -294,7 +324,7 @@ function convertToFahrenheit(celsius) {
   if (typeof(celsius) === "undefined") {
     var celsius = 0;
   }
-  return celsius *  9/5 + 32;
+  return (celsius *  9/5) + 32;
 }
 ```
 
