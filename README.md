@@ -240,7 +240,7 @@ function convertToMeters(feet) {
 }
 ```
 
-To round a float in JavaScript, you call `.toFixed()` on the number. If you're operating on the literal number, remember to wrap it in parentheses, but since we're storing it in a variable `num`, we don't have to worry about that. You then pass the a parameter, the number 2, meaning you would like two digits after the decimal:
+To round a float in JavaScript, you call `.toFixed()` on the number. If you're operating on the literal number, remember to wrap it in parentheses, but since we're storing it in the variable `num`, we don't have to worry about that. You then pass `.toFixed()` a parameter, the number 2, meaning you would like two digits after the decimal:
 
 ```javascript
 var num = 3.14159;
