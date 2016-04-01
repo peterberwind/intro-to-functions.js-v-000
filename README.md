@@ -240,13 +240,13 @@ function convertToMeters(feet) {
 }
 ```
 
-To round a float in JavaScript, you wrap the number in parentheses and then call `.toFixed()` on the number. You then pass the a parameter, the number 2, meaning you would like two digits after the decimal:
+To round a float in JavaScript, you call `.toFixed()` on the number. If you're operating on the literal number, remember to wrap it in parentheses, but since we're storing it in a variable `num`, we don't have to worry about that. You then pass the a parameter, the number 2, meaning you would like two digits after the decimal:
 
 ```javascript
 var num = 3.14159;
 
 // Returns the number 3.14 
-(num).toFixed(2);
+num.toFixed(2);
 ```
 
 Let's incorporate the `.toFixed()` function to the second line of our new JavaScript function:
@@ -254,7 +254,7 @@ Let's incorporate the `.toFixed()` function to the second line of our new JavaSc
 ```javascript
 function convertToMeters(feet) {
   var meters = feet / 3.2808;
-  var rounded = (meters).toFixed(2);
+  var rounded = meters.toFixed(2);
   // add code
 }
 ```
@@ -264,7 +264,7 @@ Finally, let's concatenate our rounded meter value with the string " meters":
 ```javascript
 function convertToMeters(feet) {
   var meters = feet / 3.2808;
-  var rounded = (meters).toFixed(2);
+  var rounded = meters.toFixed(2);
   rounded + " meters";
 }
 ```
@@ -281,7 +281,7 @@ Alright, so instead of getting our desired result of `"4.88 meters"`, we got `un
 ```javascript
 function convertToMeters(feet) {
   var meters = feet / 3.2808;
-  var rounded = (meters).toFixed(2);
+  var rounded = meters.toFixed(2);
   return rounded + " meters";
 }
 ```
@@ -329,3 +329,5 @@ function convertToFahrenheit(celsius) {
 ```
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/intro-to-functions.js' title='JavaScript Functions'>JavaScript Functions</a> on Learn.co and start learning to code for free.</p>
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/intro-to-functions.js'>Functions in JS</a> on Learn.co and start learning to code for free.</p>
