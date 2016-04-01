@@ -329,5 +329,3 @@ function convertToFahrenheit(celsius) {
 ```
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/intro-to-functions.js' title='JavaScript Functions'>JavaScript Functions</a> on Learn.co and start learning to code for free.</p>
-
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/intro-to-functions.js'>Functions in JS</a> on Learn.co and start learning to code for free.</p>
