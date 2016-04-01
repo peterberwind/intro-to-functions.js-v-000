@@ -105,7 +105,7 @@ A function expression looks something like this:
 ```js
 var greet = function(name, timeOfDay){ 
   return "Good "+ timeOfDay + " "+ name + "!";
-}
+};
 ```
 
 We can still call this function in the same way we would a function written with a function declaration:
