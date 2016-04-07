@@ -1,6 +1,8 @@
 # JavaScript Functions
 
-You're already very familiar with the idea of wrapping our code as methods in Ruby in order to make them reusable. In JavaScript, we call them functions and the syntax is slightly different, but the general idea is the same.
+You're already very familiar with the idea of wrapping our code as methods in
+Ruby in order to make them reusable. In JavaScript, we call them functions and
+the syntax is slightly different, but the general idea is the same.
 
 ## Objectives
 + Explain how function return values work
@@ -11,7 +13,8 @@ You're already very familiar with the idea of wrapping our code as methods in Ru
 
 ## Function Without Parameters
 
-Here's the basic syntax for a function that doesn't take any parameters (you know them as arguments):
+Here's the basic syntax for a function that doesn't take any parameters (you
+know them as arguments):
 
 ```javascript
 function nameOfFunction() {
@@ -20,11 +23,40 @@ function nameOfFunction() {
 }
 ```
 
-Notice the `def` keyword has been replaced with the `function` keyword. The name of the function is always followed by `()` and then curly braces that begin and end the function.
+Notice the `def` keyword has been replaced with the `function` keyword. The name
+of the function is always followed by `()` and then curly braces that begin and
+end the function.
 
-Further, the name of the function is not snake_cased, but rather lowerCamelCased. Snakecase is not used in JavaScript so leave your underscores at home people!
+Further, the name of the function is not snake_cased, but rather
+lowerCamelCased. Snakecase is not used in JavaScript so leave your underscores
+at home people!
 
-One last important thing to note is that JavaScript functions will always return `undefined` unless you use the `return` keyword. In Ruby, writing `return` is optional because Ruby always returns the value of the last line of code evaluated. However, JavaScript has no implicit-return-value concept, so you must write `return` before the value you want to return.
+One last important thing to note is that JavaScript functions will always return
+`undefined` unless you use the `return` keyword. In Ruby, writing `return` is
+optional because Ruby always returns the value of the last line of code
+evaluated. However, JavaScript has no implicit-return-value concept, so you must
+write `return` before the value you want to return.
+
+**NOTE**: This isn't exactly true in [ECMAScript 6](http://es6-features.org/).
+For [arrow function](http://es6-features.org/#ExpressionBodies) expression
+bodies that are not wrapped in curly brackets, you can omit the return:
+
+``` javascript
+[1, 2, 3, 4].filter(i => i % 2 === 0) // [2, 4]
+```
+
+But if you wrap the function body in curly brackets, you must explicitly
+return your desired value:
+
+``` javascript
+[1, 2, 3, 4].filter(i => { return i % 2 === 0 }) // [2, 4]
+
+// alternatively
+
+[1, 2, 3, 4].filter(i => {
+    return i % 2 === 0
+})
+```
 
 Here's a simple example of a function that will will greet us good morning:
 
@@ -98,12 +130,14 @@ Like in Ruby, you can add as many parameters to your JavaScript functions as you
 
 ## Function Expression
 
-There are two different ways to write functions in JavaScript. You can write them as a function **declaration** which is how we've been writing them, or as a function *expression**. Both ways effectively work the same way, they just store the functions in memory slightly differently.
+There are two different ways to write functions in JavaScript. You can write
+them as a function **declaration** which is how we've been writing them, or as a
+function *expression**.
 
 A function expression looks something like this:
 
 ```js
-var greet = function(name, timeOfDay){ 
+var greet = function(name, timeOfDay){
   return "Good "+ timeOfDay + " "+ name + "!";
 };
 ```
@@ -115,7 +149,35 @@ We can still call this function in the same way we would a function written with
 greet("Grover", "afternoon");
 ```
 
-For all intents and purposes, a function declaration and a function expression work in the exact same way. It's good to be familiar with both ways of writing a function for when you start working with other developers, or using Google resources for help.
+Function declarations are hoisted to the top of the current scope; function
+declarations are not.
+
+``` javascript
+
+// this works, even though we're calling
+// the function before the declaration —
+// the `sayGoodbye` function is *hoisted*
+// to the top of the current scope when
+// the script is evaluated
+sayGoodbye();
+
+function sayGoodbye() {
+    return 'Goodbye!';
+}
+
+
+// this does not work, as the function
+// is not hoisted in a function expression
+
+sayHello(); // TypeError: sayHello is not a function
+
+var sayHello = function() {
+    return 'Hello!';
+};
+```
+
+It's good to be familiar with both ways of writing a function for when you start
+working with other developers, or using Google resources for help.
 
 ## Default parameters
 
@@ -151,7 +213,7 @@ function greet(name) {
 }
 ```
 
-To give the variable `name` a default value, you check to see if `name` has been defined on the first line of your function. To do this, you call JavaScript's `typeof()` function, which is a lot like calling `.class` in Ruby. If the function wasn't passed a parameter, then the variable you defined will be `"undefined"`. 
+To give the variable `name` a default value, you check to see if `name` has been defined on the first line of your function. To do this, you call JavaScript's `typeof()` function, which is a lot like calling `.class` in Ruby. If the function wasn't passed a parameter, then the variable you defined will be `"undefined"`.
 
 ```javascript
 function greet(name) {
@@ -196,14 +258,14 @@ greet("joe");
 
 Be careful when calling functions with parameters. This could inadvertently mess up your return values.
 
-## Example 
+## Example
 
 If you'd like more practice with JavaScript functions, this section covers how to rewrite a Ruby method that converts feet to meters in JavaScript. Here's that Ruby method:
 
 ```ruby
 def convert_to_meters(feet)
   meters = feet / 3.2808
-  rounded = meters.round(2) 
+  rounded = meters.round(2)
   "#{rounded} meters"
 end
 ```
@@ -245,7 +307,7 @@ To round a float in JavaScript, you call `.toFixed()` on the number. If you're o
 ```javascript
 var num = 3.14159;
 
-// Returns the number 3.14 
+// Returns the number 3.14
 num.toFixed(2);
 ```
 
