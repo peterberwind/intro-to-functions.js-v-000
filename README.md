@@ -181,7 +181,10 @@ working with other developers, or using Google resources for help.
 
 ## Default parameters
 
-Ruby has an idea of allowing you to pass optional arguments by defaulting argument values. To create a default argument, you add an equal sign where you define the variable name of your argument and set it equal to the value you want it to default to:
+Ruby has an idea of allowing you to pass optional arguments by defaulting
+argument values. To create a default argument, you add an equal sign where you
+define the variable name of your argument and set it equal to the value you want
+it to default to:
 
 ```ruby
 def greet(name="you")
@@ -189,7 +192,8 @@ def greet(name="you")
 end
 ```
 
-This way, you can call on the method with the argument and it will set `name` to be the string you passed.
+This way, you can call on the method with the argument and it will set `name` to
+be the string you passed.
 
 Ruby:
 
@@ -198,14 +202,16 @@ greet("Jasmine")
 # => "Good morning Jasmine!"
 ```
 
-**or** you can call on the method without the argument and `name` will default to the string `"you"`:
+**or** you can call on the method without the argument and `name` will default
+to the string `"you"`:
 
 ```ruby
 greet
 # => "Good morning you!"
 ```
 
-In JavaScript, you can make functions behave has though they have default arguments. Here again is the simple greeting function:
+In JavaScript, you can make functions behave has though they have default
+arguments. Here again is the simple greeting function:
 
 ```javascript
 function greet(name) {
@@ -213,11 +219,15 @@ function greet(name) {
 }
 ```
 
-To give the variable `name` a default value, you check to see if `name` has been defined on the first line of your function. To do this, you call JavaScript's `typeof()` function, which is a lot like calling `.class` in Ruby. If the function wasn't passed a parameter, then the variable you defined will be `"undefined"`.
+To give the variable `name` a default value, you check to see if `name` has been
+defined on the first line of your function. To do this, you call JavaScript's
+`typeof` operator, which is a lot like calling `.class` in Ruby.
+If the function wasn't passed a parameter, then the variable will be
+`"undefined"`.
 
 ```javascript
 function greet(name) {
-  if (typeof(name) === "undefined") {
+  if (typeof name === "undefined") {
     // add code
   }
   return "Good morning " + name + "!";
@@ -228,8 +238,8 @@ Inside the `if` statement, go ahead and set the default value you desire:
 
 ```javascript
 function greet(name) {
-  if (typeof(name) === "undefined") {
-    var name = "you";
+  if (typeof name === "undefined") {
+    name = "you";
   }
   return "Good morning " + name + "!";
 }
@@ -245,7 +255,10 @@ greet("Blake");
 greet();
 ```
 
-Unlike Ruby, JavaScript doesn't force you to call a function with a set number of parameters. If a JavaScript function it defined to accept two parameters, and you call the function with only one parameter, the function will still run, but place `undefined` in the spot of the missing paramater:
+Unlike Ruby, JavaScript doesn't force you to call a function with a set number
+of parameters. If a JavaScript function it defined to accept two parameters, and
+you call the function with only one parameter, the function will still run, but
+place `undefined` in the spot of the missing paramater:
 
 ```js
 function greet(name, timeOfDay) {
@@ -256,7 +269,28 @@ greet("joe");
 // returns "Good undefined joe!"
 ```
 
-Be careful when calling functions with parameters. This could inadvertently mess up your return values.
+Be careful when calling functions with parameters. This could inadvertently mess
+up your return values.
+
+### **ES6 Note**
+
+ECMAScript 6 introduces [default parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
+in JavaScript. Their syntax should look familiar:
+
+``` javascript
+function greet(name="Sue", timeOfDay="morning") {
+    return "Good " + timeOfDay + " " name + "!";
+}
+
+// 'Good morning, Sue!'
+greet();
+
+// 'Good morning, George!'
+greet('George');
+
+// 'Good afternoon, Dory!'
+greet('Dory', 'afternoon');
+```
 
 ## Example
 
@@ -367,6 +401,7 @@ end
 
 * [Eloquent JavaScript - Functions](http://eloquentjavascript.net/03_functions.html)
 * [MDN - Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions)
+* [MDN - Arrow Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 * [MDN - Default Parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
 
 ## Solution
