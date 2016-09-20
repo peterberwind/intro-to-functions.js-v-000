@@ -150,7 +150,7 @@ greet("Grover", "afternoon");
 ```
 
 Function declarations are hoisted to the top of the current scope; function
-declarations are not.
+expressions are not.
 
 ``` javascript
 
